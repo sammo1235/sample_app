@@ -1,0 +1,29 @@
+inside console
+  User.create(name: "anything", email: "example@foobar.com")
+
+  user = User.new(name: "Micheal", email: "mhartl@foobar.com")
+
+  user.valid?
+  >> true // false
+
+  user.save
+  >> true / false
+
+  user.name
+  user.email
+  user.created_at
+  user.updated_at
+
+inverse of create is destroy
+  foo.destroy
+
+  User.find(1)
+
+  User.find_by(email: "whatever you're looking for")
+
+  User.first
+  User.last
+
+  user.reload.email
+
+  user.update_attribute/s(:name "if just one", email: "colon after if two")
