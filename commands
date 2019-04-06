@@ -30,3 +30,12 @@ inverse of create is destroy
 
   email regex
   /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+
+  one:
+    name: MyString
+    email: MyString
+
+  two:
+    name: MyString
+    email: MyString
