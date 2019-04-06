@@ -27,3 +27,6 @@ inverse of create is destroy
   user.reload.email
 
   user.update_attribute/s(:name "if just one", email: "colon after if two")
+
+  email regex
+  /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
