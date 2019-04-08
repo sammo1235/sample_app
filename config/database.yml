@@ -1,4 +1,3 @@
-cat config/database.yml
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -6,7 +5,7 @@ cat config/database.yml
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
