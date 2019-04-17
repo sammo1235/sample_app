@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-
+gem 'i18n', '0.7'
 gem 'rails', '~> 5.2.2'
 gem 'bcrypt', '3.1.12'
 gem 'puma', '~> 3.11'
@@ -14,6 +14,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'wdm', '>= 0.1.1' if Gem.win_platform?
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
+gem 'faker', '1.7.3'
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
