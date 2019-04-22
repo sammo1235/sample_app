@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
+
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -15,8 +16,6 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-
-
 
   def User.new_token
     SecureRandom.urlsafe_base64
@@ -38,8 +37,8 @@ class User < ApplicationRecord
   end
 
   def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
-    #update_attribute(:activated_at, Time.zone.now)
+    update_columns(activated: true)
+    update_attribute(:activated_at, Time.zone.now)
   end
 
   def send_activation_email
@@ -55,7 +54,7 @@ class User < ApplicationRecord
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
   end
-  
+
   private
 
     def downcase_email
