@@ -15,7 +15,7 @@ gem 'wdm', '>= 0.1.1' if Gem.win_platform?
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'faker', '1.7.3'
-gem 'will_paginate',           '3.1.6'
+gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'will_paginate-bootstrap'
 group :development, :test do
